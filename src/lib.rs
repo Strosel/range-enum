@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 use proc_macro::TokenStream;
 use quote::quote;
 use syn::{spanned::Spanned, Error, Result};
@@ -21,7 +23,7 @@ fn expr_to_usize(expr: Box<syn::Expr>) -> Result<usize> {
 
 /// An attribute macro that generates enum variants from a range.
 /// # Example
-/// ```
+/// ```rust
 /// use range_enum::range_enum;
 ///
 /// #[range_enum(1..=2)]
